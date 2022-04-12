@@ -1,4 +1,13 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "gated": "apps/gated",
+    "gated-data-access": "libs/gated/data-access",
+    "gated-feature-auth": "libs/gated/feature-auth",
+    "gated-feature-guilds": "libs/gated/feature-guilds",
+    "gated-feature-ticket": "libs/gated/feature-ticket",
+    "gated-feature-users": "libs/gated/feature-users",
+    "gated-feature-welcome": "libs/gated/feature-welcome",
+    "gatekeeper": "apps/gatekeeper"
+  }
 }

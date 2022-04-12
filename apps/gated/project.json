@@ -1,0 +1,54 @@
+{
+  "root": "apps/gated",
+  "sourceRoot": "apps/gated/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/gated",
+        "main": "apps/gated/src/main.ts",
+        "tsConfig": "apps/gated/tsconfig.app.json",
+        "assets": ["apps/gated/src/assets"],
+        "watch": true
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/gated/src/environments/environment.ts",
+              "with": "apps/gated/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "gated:build",
+        "watch": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/gated/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/gated"],
+      "options": {
+        "jestConfig": "apps/gated/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:server", "scope:gated"]
+}

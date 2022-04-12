@@ -14,7 +14,26 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@v-thomas/gated/data-access": [
+        "libs/gated/data-access/src/public_api.ts"
+      ],
+      "@v-thomas/gated/feature-auth": [
+        "libs/gated/feature-auth/src/public_api.ts"
+      ],
+      "@v-thomas/gated/feature-guilds": [
+        "libs/gated/feature-guilds/src/public_api.ts"
+      ],
+      "@v-thomas/gated/feature-ticket": [
+        "libs/gated/feature-ticket/src/index.ts"
+      ],
+      "@v-thomas/gated/feature-users": [
+        "libs/gated/feature-users/src/public_api.ts"
+      ],
+      "@v-thomas/gated/feature-welcome": [
+        "libs/gated/feature-welcome/src/public_api.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

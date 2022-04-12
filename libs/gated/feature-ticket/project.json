@@ -1,0 +1,33 @@
+{
+  "root": "libs/gated/feature-ticket",
+  "sourceRoot": "libs/gated/feature-ticket/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gated/feature-ticket",
+        "tsConfig": "libs/gated/feature-ticket/tsconfig.lib.json",
+        "packageJson": "libs/gated/feature-ticket/package.json",
+        "main": "libs/gated/feature-ticket/src/index.ts",
+        "assets": ["libs/gated/feature-ticket/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gated/feature-ticket/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gated/feature-ticket"],
+      "options": {
+        "jestConfig": "libs/gated/feature-ticket/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,33 @@
+{
+  "root": "libs/gated/feature-guilds",
+  "sourceRoot": "libs/gated/feature-guilds/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gated/feature-guilds",
+        "tsConfig": "libs/gated/feature-guilds/tsconfig.lib.json",
+        "packageJson": "libs/gated/feature-guilds/package.json",
+        "main": "libs/gated/feature-guilds/src/index.ts",
+        "assets": ["libs/gated/feature-guilds/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gated/feature-guilds/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gated/feature-guilds"],
+      "options": {
+        "jestConfig": "libs/gated/feature-guilds/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

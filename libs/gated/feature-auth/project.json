@@ -1,0 +1,33 @@
+{
+  "root": "libs/gated/feature-auth",
+  "sourceRoot": "libs/gated/feature-auth/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gated/feature-auth",
+        "tsConfig": "libs/gated/feature-auth/tsconfig.lib.json",
+        "packageJson": "libs/gated/feature-auth/package.json",
+        "main": "libs/gated/feature-auth/src/public_api.ts",
+        "assets": ["libs/gated/feature-auth/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gated/feature-auth/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gated/feature-auth"],
+      "options": {
+        "jestConfig": "libs/gated/feature-auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

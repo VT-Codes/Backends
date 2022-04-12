@@ -1,0 +1,33 @@
+{
+  "root": "libs/gated/data-access",
+  "sourceRoot": "libs/gated/data-access/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gated/data-access",
+        "tsConfig": "libs/gated/data-access/tsconfig.lib.json",
+        "packageJson": "libs/gated/data-access/package.json",
+        "main": "libs/gated/data-access/src/public_api.ts",
+        "assets": ["libs/gated/data-access/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gated/data-access/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gated/data-access"],
+      "options": {
+        "jestConfig": "libs/gated/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,33 @@
+{
+  "root": "libs/gated/feature-welcome",
+  "sourceRoot": "libs/gated/feature-welcome/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gated/feature-welcome",
+        "tsConfig": "libs/gated/feature-welcome/tsconfig.lib.json",
+        "packageJson": "libs/gated/feature-welcome/package.json",
+        "main": "libs/gated/feature-welcome/src/public_api.ts",
+        "assets": ["libs/gated/feature-welcome/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gated/feature-welcome/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gated/feature-welcome"],
+      "options": {
+        "jestConfig": "libs/gated/feature-welcome/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

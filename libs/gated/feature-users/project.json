@@ -1,0 +1,33 @@
+{
+  "root": "libs/gated/feature-users",
+  "sourceRoot": "libs/gated/feature-users/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gated/feature-users",
+        "tsConfig": "libs/gated/feature-users/tsconfig.lib.json",
+        "packageJson": "libs/gated/feature-users/package.json",
+        "main": "libs/gated/feature-users/src/public_api.ts",
+        "assets": ["libs/gated/feature-users/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gated/feature-users/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gated/feature-users"],
+      "options": {
+        "jestConfig": "libs/gated/feature-users/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
